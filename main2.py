@@ -1,6 +1,5 @@
-# coding:utf-8
 import os
-import git
+from bin.module import git
 
 # 用于对比子两个相似项目的子模块引用是否一致
 projectPath1 = "/Users/xiaoyezi/workfolder/smartpiano-android-oversea"

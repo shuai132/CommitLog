@@ -1,8 +1,6 @@
-# coding:utf-8
+import subprocess
 
-import commands
-
-cmd = commands.getoutput
+cmd = subprocess.getoutput
 
 # 基本操作
 def stash():
@@ -33,7 +31,10 @@ def getCommitMsgBeforeCommit(commitId):
 
 # 获取子模块状态表 path作为key commitId作为value
 def getSubmoduleStatus():
-    smStatus = cmd("git submodule status").split("\n")
+    ret = cmd("git submodule status")
+    if ret == "":
+        return {}
+    smStatus = ret.split("\n")
     statusTable = {}
     for status in smStatus:
         infos = status[1:].split(" ")

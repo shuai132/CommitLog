@@ -1,6 +1,5 @@
-# coding:utf-8
 import os
-import git
+from bin.module import git
 
 # 获取两次commit之间所有的commit信息 包含子模块(深度为1)的更新
 projectPath  = "/Users/xiaoyezi/workfolder/smartpiano-apple-oversea"
